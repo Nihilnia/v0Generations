@@ -7,6 +7,7 @@
       }"
       @mousemove="handleMouseMove($event, card)"
       @mouseleave="handleMouseLeave(card)"
+      @click="handleCardClick"
     >
       <div class="p-6 h-full flex flex-col justify-between">
         <h2 class="text-2xl font-bold text-white mb-4">{{ title }}</h2>
@@ -19,6 +20,7 @@
 <script setup>
 import { reactive } from "vue";
 import { defineProps } from "vue";
+import { useRouter } from "vue-router"; // Import useRouter
 
 // Define props using defineProps
 defineProps({
@@ -33,6 +35,9 @@ defineProps({
     default: "Default Subtitle",
   },
 });
+
+// Use useRouter to navigate to another route
+const router = useRouter();
 
 // Define reactive properties for the card
 const card = reactive({
@@ -55,6 +60,12 @@ const handleMouseMove = (event) => {
 const handleMouseLeave = () => {
   card.rotateX = 0;
   card.rotateY = 0;
+};
+
+// Handle card click to navigate to a dynamic route
+const handleCardClick = () => {
+  const dynamicId = Math.floor(Math.random() * 100); // Example: Generate a dynamic ID
+  router.push({ name: "ComponentPage", params: { id: dynamicId } }); // Route to the dynamic page with ID
 };
 </script>
 
