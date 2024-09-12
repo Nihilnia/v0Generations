@@ -1,12 +1,12 @@
 <template>
-  <div class="relative h-[300px] w-[300px] mx-auto">
+  <div class="relative h-[300px] w-[300px] mx-auto v0-comp">
     <div
-      class="card absolute inset-0 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg shadow-lg overflow-hidden transition-all duration-200 ease-out"
+      class="card absolute inset-0 rounded-lg shadow-lg overflow-hidden transition-all duration-200 ease-out"
       :style="{
         transform: `perspective(1000px) rotateX(${card.rotateX}deg) rotateY(${card.rotateY}deg)`,
       }"
-      @mousemove="handleMouseMove($event, card)"
-      @mouseleave="handleMouseLeave(card)"
+      @mousemove="handleMouseMove"
+      @mouseleave="handleMouseLeave"
       @click="handleCardClick"
     >
       <div class="p-6 h-full flex flex-col justify-between">
@@ -30,6 +30,11 @@ defineProps({
     default: "Default Title",
   },
   subTitle: {
+    type: String,
+    required: false,
+    default: "Default Subtitle",
+  },
+  daPage: {
     type: String,
     required: false,
     default: "Default Subtitle",
@@ -62,10 +67,9 @@ const handleMouseLeave = () => {
   card.rotateY = 0;
 };
 
-// Handle card click to navigate to a dynamic route
+// Function to handle the card click and navigate to a new page
 const handleCardClick = () => {
-  const dynamicId = Math.floor(Math.random() * 100); // Example: Generate a dynamic ID
-  router.push({ name: "ComponentPage", params: { id: dynamicId } }); // Route to the dynamic page with ID
+  router.push({ name: "ParallaxCard" }); // Push the named route 'ParallaxCard' to the router
 };
 </script>
 
@@ -74,6 +78,9 @@ const handleCardClick = () => {
   will-change: transform;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+  background-image: url(../assets/edgeRunners.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 .card::before {

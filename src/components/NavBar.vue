@@ -4,8 +4,10 @@
       <div class="flex items-center justify-between h-16">
         <!-- Left: Logo -->
         <div class="flex-shrink-0">
-          <span class="text-2xl font-bold text-gray-800 dark:text-white"
-            >Nihil</span
+          <router-link to="/"
+            ><span class="text-2xl font-bold text-gray-800 dark:text-white"
+              >Nihil</span
+            ></router-link
           >
         </div>
 

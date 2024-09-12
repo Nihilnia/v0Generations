@@ -3,6 +3,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 import ComponentPage from "@/pages/ComponentPage.vue";
+import ParallaxCard from "@/pages/ParallaxCard.vue";
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: "/component/:id", // Dynamic route with 'id' as a parameter
     name: "ComponentPage",
     component: ComponentPage,
+  },
+  {
+    path: "/ParallaxCard", // Dynamic route with 'id' as a parameter
+    name: "ParallaxCard",
+    component: ParallaxCard,
   },
   // Add more routes as needed
 ];
