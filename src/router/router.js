@@ -1,8 +1,6 @@
-// src/router.js
-
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
-import ComponentPage from "@/pages/ComponentPage.vue";
+
 import ParallaxCard from "@/pages/ParallaxCard.vue";
 
 const routes = [
@@ -12,20 +10,14 @@ const routes = [
     component: HomePage,
   },
   {
-    path: "/component/:id", // Dynamic route with 'id' as a parameter
-    name: "ComponentPage",
-    component: ComponentPage,
-  },
-  {
-    path: "/ParallaxCard", // Dynamic route with 'id' as a parameter
+    path: "/ParallaxCard",
     name: "ParallaxCard",
     component: ParallaxCard,
   },
-  // Add more routes as needed
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory("/v0Generations/"), // Set the base to the GitHub Pages subdirectory
   routes,
 });
 
