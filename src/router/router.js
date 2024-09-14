@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 
 import ParallaxCard from "@/pages/ParallaxCard.vue";
+import PhotoGallery from "@/pages/PhotoGallery.vue";
 
 const routes = [
   {
@@ -13,6 +14,11 @@ const routes = [
     path: "/ParallaxCard",
     name: "ParallaxCard",
     component: ParallaxCard,
+  },
+  {
+    path: "/PhotoGallery",
+    name: "PhotoGallery",
+    component: PhotoGallery,
   },
 ];
 

@@ -3,6 +3,7 @@
     <div
       class="card absolute inset-0 rounded-lg shadow-lg overflow-hidden transition-all duration-200 ease-out"
       :style="{
+        backgroundImage: `url(${backgroundImage})`,
         transform: `perspective(1000px) rotateX(${card.rotateX}deg) rotateY(${card.rotateY}deg)`,
       }"
       @mousemove="handleMouseMove"
@@ -20,10 +21,10 @@
 <script setup>
 import { reactive } from "vue";
 import { defineProps } from "vue";
-import { useRouter } from "vue-router"; // Import useRouter
+import { useRouter } from "vue-router";
 
-// Define props using defineProps
-defineProps({
+// Define props
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -37,12 +38,20 @@ defineProps({
   daPage: {
     type: String,
     required: false,
-    default: "Default Subtitle",
+    default: "Default Page",
+  },
+  bgImg: {
+    type: String,
+    required: false,
+    default: "parallaxCardIMG.jpg", // Default image in case none is provided
   },
 });
 
 // Use useRouter to navigate to another route
 const router = useRouter();
+
+// Dynamically import the background image
+const backgroundImage = require(`@/assets/${props.bgImg}`);
 
 // Define reactive properties for the card
 const card = reactive({
@@ -69,7 +78,7 @@ const handleMouseLeave = () => {
 
 // Function to handle the card click and navigate to a new page
 const handleCardClick = () => {
-  router.push({ name: "ParallaxCard" }); // Push the named route 'ParallaxCard' to the router
+  router.push({ name: props.daPage });
 };
 </script>
 
@@ -78,7 +87,6 @@ const handleCardClick = () => {
   will-change: transform;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  background-image: url(../assets/edgeRunners.jpg);
   background-size: cover;
   background-position: center;
 }

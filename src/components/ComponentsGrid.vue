@@ -7,6 +7,13 @@
         title="Parallax Effect"
         subTitle="This is a cool effect!"
         daPage="ParallaxCard"
+        bgImg="parallaxCardIMG.jpg"
+      ></cards-component>
+      <cards-component
+        title="Photo Gallery"
+        subTitle="Included carousel"
+        daPage="PhotoGallery"
+        bgImg="photoGalleryIMG.jpeg"
       ></cards-component>
     </div>
   </div>

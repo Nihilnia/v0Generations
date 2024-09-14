@@ -30,7 +30,7 @@ const rotation = reactive({ rotateX: 0, rotateY: 0, translateZ: 0 });
 
 const cardStyle = computed(() => ({
   transform: `perspective(1000px) rotateX(${rotation.rotateX}deg) rotateY(${rotation.rotateY}deg) translateZ(${rotation.translateZ}px)`,
-  backgroundImage: `url(${require("@/assets/edgeRunners.jpg")})`,
+  backgroundImage: `url(${require("@/assets/parallaxCardIMG.jpg")})`,
   backgroundSize: "cover",
   backgroundPosition: "center",
 }));
