@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
-
 import ParallaxCard from "@/pages/ParallaxCard.vue";
 import PhotoGallery from "@/pages/PhotoGallery.vue";
 
@@ -23,7 +22,9 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/v0Generations/"), // Set the base to the GitHub Pages subdirectory
+  history: createWebHistory(
+    process.env.NODE_ENV === "production" ? "/v0Generations/" : "/"
+  ), // Dynamically set base path
   routes,
 });
 
