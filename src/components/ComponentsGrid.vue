@@ -15,6 +15,12 @@
         daPage="PhotoGallery"
         bgImg="photoGalleryIMG.jpeg"
       ></cards-component>
+      <cards-component
+        title="Typewriter Effect"
+        subTitle="Included carousel"
+        daPage="TypeWriter"
+        bgImg="typeWriterIMG.avif"
+      ></cards-component>
     </div>
   </div>
 </template>

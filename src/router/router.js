@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "@/pages/HomePage.vue";
 import ParallaxCard from "@/pages/ParallaxCard.vue";
 import PhotoGallery from "@/pages/PhotoGallery.vue";
+import TypeWriter from "@/pages/TypeWriter.vue";
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: "/PhotoGallery",
     name: "PhotoGallery",
     component: PhotoGallery,
+  },
+  {
+    path: "/TypeWriter",
+    name: "TypeWriter",
+    component: TypeWriter,
   },
 ];
 
